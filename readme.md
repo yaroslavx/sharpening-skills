@@ -1,3 +1,3 @@
-# Welcome to Some Interesting React Projects
+# Welcome to Puppeteer Project
 
 > All Projects in branches.
