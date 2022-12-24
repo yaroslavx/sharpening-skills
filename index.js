@@ -1,3 +1,4 @@
+const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 async function run() {
@@ -18,11 +19,21 @@ async function run() {
   // const text = await page.evaluate(() => document.body.innerText);
   // console.log(text);
 
-  const classNames = await page.evaluate(
-    () => Array.from(document.querySelectorAll('div')),
-    (e) => e.className
+  // const classNames = await page.evaluate(
+  //   () => Array.from(document.querySelectorAll('div')),
+  //   (e) => e.className
+  // );
+  // console.log(classNames);
+
+  const divs = await page.$$eval('div', (elements) =>
+    elements.map((e) => ({
+      className: e.className,
+    }))
   );
-  console.log(classNames);
+  fs.writeFile('divs.json', JSON.stringify(divs), (err) => {
+    if (err) throw err;
+    console.log('File Saved');
+  });
 
   await browser.close();
 }
