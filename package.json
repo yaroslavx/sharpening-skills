@@ -1,0 +1,14 @@
+{
+  "name": "sharpening-skills",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yaroslavx/sharpening-skills.git",
+  "author": "Yaroslav Yakupov <yakupov.yaroslav@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "puppeteer": "^19.4.1"
+  }
+}
